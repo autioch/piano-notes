@@ -21,7 +21,7 @@ const {
   bar: { notes, type },
 } = Astro.props;
 
-const width = 140;
+const width = 85;
 /* @TODO Support other types */
 ---
 
@@ -29,6 +29,18 @@ const width = 140;
 
 {
   type === "normal" ? (
+    <rect x={width - 1} y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+
+{
+  type === "repeat-start" ? (
+    <rect x={width - 1} y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+
+{
+  type === "repeat-end" ? (
     <rect x={width - 1} y="1" width="1" height="24.5" fill="#000" />
   ) : null
 }

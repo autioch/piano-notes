@@ -1,5 +1,11 @@
 export type Pitch = "C" | "D" | "E" | "F" | "G" | "A" | "H";
 export type Duration = 1 | 0.5 | 0.25 | 0.125;
+export type BarFinish =
+  | "normal"
+  | "double"
+  | "double-end"
+  | "repeat-start"
+  | "repeat-end";
 
 export type Note = {
   pitch: Pitch;
@@ -8,7 +14,7 @@ export type Note = {
 
 export type Bar = {
   notes: Note[];
-  type: "normal" | "double" | "double-end" | "repeat-start" | "repeat-end";
+  type: BarFinish;
 };
 
 export type SheetMusic = {

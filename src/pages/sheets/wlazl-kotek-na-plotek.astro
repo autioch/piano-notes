@@ -1,0 +1,10 @@
+---
+import musicSheet from "../../notes/wlazl-kotek-na-plotek.json";
+import Layout from "../../components/Layout.astro";
+import SheetMusic from "../../components/SheetMusic.astro";
+import type { SheetMusic as SheetMusicType } from "../../types/piano";
+---
+
+<Layout>
+  <SheetMusic sheetMusic={musicSheet as SheetMusicType} />
+</Layout>
