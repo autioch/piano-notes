@@ -1,21 +1,44 @@
 ---
-import Staff from "../components/Staff.astro";
-import type { Pitch, Duration, Note } from "../types/piano";
+import Bar from "../components/Bar.astro";
+import type { Pitch, Bar as BarType, Note } from "../types/piano";
+import Layout from "../components/Layout.astro";
+import ViolinKey from "../components/ViolinKey.astro";
+import Config from "../components/Config.astro";
+
 const pitches: Pitch[] = ["C", "D", "E", "F", "G", "A", "H"];
 const notes = pitches.map<Note>((pitch) => ({ pitch, duration: 0.25 }));
+
+const bars: BarType[] = [
+  { notes, type: "normal" },
+  { notes, type: "double" },
+  { notes, type: "double-end" },
+];
 ---
 
-<html>
-  <body style="padding: 0; border: 0; margin: 0;">
-    <svg
-      width="600"
-      height="400"
-      viewBox="0 0 300 200"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g transform="translate(10, 50)">
-        <Staff notes={notes} />
-      </g>
-    </svg>
-  </body>
-</html>
+<Layout>
+  <svg
+    width="600"
+    height="400"
+    viewBox="0 0 600 400"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g transform="translate(0,10)">
+      <Config
+        sheetMusic={{
+          key: "violin",
+          meter: [4, 4],
+          bars,
+          title: "temp",
+          composer: "temp",
+        }}
+      />
+      {
+        bars.map((bar, i) => (
+          <g transform={`translate(${i * 140 + 40},${i * 0})`}>
+            <Bar bar={bar} />
+          </g>
+        ))
+      }
+    </g>
+  </svg>
+</Layout>

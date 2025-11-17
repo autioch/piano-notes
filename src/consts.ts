@@ -1,11 +1,11 @@
 import type { Pitch } from "./types/piano";
 
 export const NOTE_COLORS: Record<Pitch, string> = {
-    C: "#FF0000", // Red
-    D: "#FF7F00", // Orange
-    E: "#FFFF00", // Yellow
-    F: "#00FF00", // Green
-    G: "#0000FF", // Blue   
-    A: "#4B0082", // Indigo
-    H: "#8B00FF"  // Violet
+  C: "#ff5252ff", // Red
+  D: "#ffb162ff", // Orange
+  E: "#ffff64ff", // Yellow
+  F: "#67ff67ff", // Green
+  G: "#5858ffff", // Blue
+  A: "#6804afff", // Indigo
+  H: "#b760ffff", // Violet
 };

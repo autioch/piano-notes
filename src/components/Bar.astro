@@ -1,0 +1,59 @@
+---
+import Note from "./Note.astro";
+import type { Bar, Pitch } from "../types/piano";
+import Staff from "./Staff.astro";
+
+type Props = {
+  bar: Bar;
+};
+
+const offsetMap: Record<Pitch, number> = {
+  C: 27.75,
+  D: 24.75,
+  E: 21.75,
+  F: 18.75,
+  G: 15.75,
+  A: 12.75,
+  H: 9.75,
+};
+
+const {
+  bar: { notes, type },
+} = Astro.props;
+
+const width = 140;
+/* @TODO Support other types */
+---
+
+<Staff width={width} />
+
+{
+  type === "normal" ? (
+    <rect x={width - 1} y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+{
+  type === "double" ? (
+    <>
+      <rect x={width - 5} y="1" width="1" height="24.5" fill="#000" />
+      <rect x={width - 1} y="1" width="1" height="24.5" fill="#000" />
+    </>
+  ) : null
+}
+{
+  type == "double-end" ? (
+    <>
+      <rect x={width - 6} y="1" width="1" height="24.5" fill="#000" />
+      <rect x={width - 2} y="1" width="3" height="24.5" fill="#000" />
+    </>
+  ) : null
+}
+{
+  notes.map((note, i) => {
+    return (
+      <g transform={`translate(${18 * i + 10}, ${offsetMap[note.pitch]})`}>
+        <Note note={note} />
+      </g>
+    );
+  })
+}
