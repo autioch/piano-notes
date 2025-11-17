@@ -65,14 +65,3 @@ export type SerializedPianoNotes = {
   version: string; // e.g., "1.0"
   score: Score;
 };
-
-/** Utility: a compact note representation used by some consumers */
-export type CompactNote = [number | string, number, number, number?];
-/*
-  CompactNote tuple meaning:
-  [ pitch, start, duration, velocity? ]
-  - pitch: MIDI number or note name
-  - start: beats
-  - duration: beats
-  - velocity: optional 0-127
-*/

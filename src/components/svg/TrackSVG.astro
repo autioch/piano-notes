@@ -1,0 +1,30 @@
+---
+import type { Track as TrackType } from "../../types/piano";
+import NoteSVG from "./NoteSVG.astro";
+const { track, pitchToY, pitchToColor, timeToX, beatToWidth, laneHeight } =
+  Astro.props as {
+    track: TrackType;
+    pitchToY: (p: number | string) => number;
+    pitchToColor: (p: number | string) => string;
+    timeToX: (t: number) => number;
+    beatToWidth: (b: number) => number;
+    laneHeight: number;
+  };
+---
+
+<g class="track-svg">
+  <text x={0} y={-8} font-size={10} fill="#000">{track.name ?? "Track"}</text>
+  {
+    track.notes.map((n) => {
+      const pitch = n.pitch;
+      const cx = timeToX(n.start);
+      const w = Math.max(1, beatToWidth(n.duration));
+      const y = pitchToY(pitch);
+      const h = Math.max(6, laneHeight * 0.6);
+      const color = pitchToColor(pitch);
+      return (
+        <NoteSVG note={n} x={cx} y={y} width={w} height={h} color={color} />
+      );
+    })
+  }
+</g>
