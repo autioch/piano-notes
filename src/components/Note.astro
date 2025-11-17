@@ -1,0 +1,37 @@
+---
+import type { Note as NoteType } from "../types/piano";
+import { NOTE_COLORS } from "../consts";
+
+type Props = {
+  note: NoteType;
+  isDown?: boolean;
+};
+const { note, isDown = false } = Astro.props;
+
+const color = NOTE_COLORS[note.pitch] || "#000";
+const isFilled = note.duration < 0.5;
+const needLine = note.pitch === "C";
+---
+
+<g transform="translate(4,3.5)">
+  {
+    note.duration > 0.5 ? null : (
+      <rect
+        width="1"
+        height="18"
+        x={isDown ? "-3.85" : "2.9"}
+        y={isDown ? "0" : "-19"}
+        fill={color}
+      />
+    )
+  }
+  {
+    needLine ? (
+      <rect width="12" height="0.75" x="-6" y="-0.25" fill={color} />
+    ) : null
+  }
+  <g transform="rotate(-20)">
+    <ellipse rx="4" ry="3" fill={color}></ellipse>
+    {isFilled ? null : <ellipse rx="3.75" ry="1.75" fill="#fff" />}
+  </g>
+</g>
