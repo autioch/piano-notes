@@ -1,0 +1,31 @@
+---
+import Layout from "@/components/Layout.astro";
+import SheetMusic from "@/components/SheetMusic.astro";
+import type { SheetMusic as SheetMusicType } from "@/types/piano";
+import A4Paper from "@components/atoms/A4Paper.astro";
+
+export function getStaticPaths() {
+  const allNotes = Object.entries(
+    import.meta.glob("../../notes/*.json", { eager: true }) as SheetMusicType
+  );
+
+  return allNotes.map(([note, noteModule]) => {
+    return {
+      params: { note: note.split("/").pop()?.replace(".json", "") },
+      props: { sheetMusic: noteModule },
+    };
+  });
+}
+
+type Props = {
+  sheetMusic: SheetMusicType;
+};
+
+const { sheetMusic } = Astro.props;
+---
+
+<Layout>
+  <A4Paper>
+    <SheetMusic sheetMusic={sheetMusic} />
+  </A4Paper>
+</Layout>

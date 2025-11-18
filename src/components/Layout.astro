@@ -1,3 +1,14 @@
+---
+import type { SheetMusic as SheetMusicType } from "@/types/piano";
+
+const allNotes = Object.entries(
+  import.meta.glob("../notes/*.json", { eager: true })
+).map(([fileName, content]) => ({
+  note: fileName.replace("../notes/", "").replace(".json", ""),
+  title: (content as SheetMusicType).title,
+}));
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -7,16 +18,32 @@
     <title>Astro</title>
   </head>
   <body>
-    <div style="font-size:12px">
-      <a href="/">Home</a>
-      <a href="/example">Example</a>
-      <a href="/sheets/wlazl-kotek-na-plotek">Wlazł kotek na płotek</a>
+    <div class="grid">
+      <div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/example">Przykłady</a></li>
+          </ul>
+          <h3>Sheets</h3>
+          <ul>
+            {
+              allNotes.map(({ note, title }) => (
+                <li>
+                  <a href={`/sheets/${note}`}>{title}</a>{" "}
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+      <main class="main">
+        <slot />
+      </main>
     </div>
-    <main>
-      <slot />
-    </main>
   </body>
 </html>
+
 <style>
   html,
   body {
@@ -33,5 +60,15 @@
       sans-serif;
     background-color: #f9f9f9;
     color: #333;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /* min-height: 100vh; */
   }
 </style>
