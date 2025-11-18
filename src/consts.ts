@@ -19,10 +19,10 @@ export const BAR_PADDING = 8;
 export const BAR_HEIGHT = 70;
 
 /** Width available for the notes */
-export const SVG_WIDTH = 190 + 190 * 0.5;
+export const SVG_WIDTH = 190 + 190 * 0.49;
 
 /** Height available for the notes */
-export const SVG_HEIGHT = 247 + 247 * 0.5;
+export const SVG_HEIGHT = 247 + 247 * 0.49;
 
 export const CONFIG_WIDTH = 35;
 
