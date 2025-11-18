@@ -1,6 +1,7 @@
 {
   "name": "",
   "type": "module",
+  "homepage": "https://autioch.github.io/piano-notes/",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
