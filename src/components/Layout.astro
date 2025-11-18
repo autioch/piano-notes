@@ -1,5 +1,6 @@
 ---
 import type { SheetMusic as SheetMusicType } from "@/types/piano";
+import Link from "@/components/atoms/Link.astro";
 
 const allNotes = Object.entries(
   import.meta.glob("../notes/*.json", { eager: true })
@@ -22,15 +23,15 @@ const allNotes = Object.entries(
       <div>
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/example">Przykłady</a></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/example">Przykłady</Link></li>
           </ul>
           <h3>Sheets</h3>
           <ul>
             {
               allNotes.map(({ note, title }) => (
                 <li>
-                  <a href={`/sheets/${note}`}>{title}</a>{" "}
+                  <Link href={`/sheets/${note}`}>{title}</Link>
                 </li>
               ))
             }

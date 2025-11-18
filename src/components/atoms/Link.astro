@@ -1,0 +1,11 @@
+---
+const base = import.meta.env.BASE_URL;
+
+type Props = {
+  href: string;
+};
+
+const { href } = Astro.props;
+---
+
+<a href={base + href}><slot /></a>
