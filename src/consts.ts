@@ -3,8 +3,8 @@ import type { BarFinish, Duration, Pitch } from "@/types/piano";
 export const NOTE_COLORS: Record<Pitch, string> = {
   C: "#ff5252ff", // Red
   D: "#ffb162ff", // Orange
-  E: "#ffff64ff", // Yellow
-  F: "#67ff67ff", // Green
+  E: "#f1f148ff", // Yellow
+  F: "#59e759ff", // Green
   G: "#6804afff", // Indigo
   A: "#5858ffff", // Blue
   H: "#b760ffff", // Violet
