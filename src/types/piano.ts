@@ -1,4 +1,25 @@
-export type Pitch = "C" | "D" | "E" | "F" | "G" | "A" | "H";
+export type Pitch =
+  | "C3"
+  | "D3"
+  | "E3"
+  | "F3"
+  | "G3"
+  | "A3"
+  | "H3"
+  | "C4"
+  | "D4"
+  | "E4"
+  | "F4"
+  | "G4"
+  | "A4"
+  | "H4"
+  | "C5"
+  | "D5"
+  | "E5"
+  | "F5"
+  | "G5"
+  | "A5"
+  | "H5";
 
 type FullDuration = 1; // empty note head
 type HalfDuration = 0.5; // empty note head with stem

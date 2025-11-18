@@ -1,9 +1,9 @@
 {
-    "title": "Wlazł kotek na płotek",
+    "title": "Sto lat",
     "composer": "Muzyka tradycyjna",
     "key": "violin",
     "meter": [
-        3,
+        2,
         4
     ],
     "bars": [
@@ -11,15 +11,11 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "G4",
+                    "pitch": "C5",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E4",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "E4",
+                    "pitch": "A4",
                     "duration": 0.25
                 }
             ]
@@ -28,15 +24,11 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "F4",
+                    "pitch": "C5",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D4",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "D4",
+                    "pitch": "A4",
                     "duration": 0.25
                 }
             ]
@@ -45,15 +37,109 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "C4",
+                    "pitch": "C5",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "D5",
                     "duration": 0.125
                 },
                 {
-                    "pitch": "E4",
+                    "pitch": "C5",
+                    "duration": 0.125
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "H4",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "C5",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "H4",
+                    "duration": 0.125
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "A4",
                     "duration": 0.125
                 },
                 {
                     "pitch": "G4",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "A4",
+                    "duration": 0.25
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "C5",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "A4",
+                    "duration": 0.25
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "C5",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "A4",
+                    "duration": 0.25
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "C5",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "F5",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "E5",
+                    "duration": 0.125
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "D5",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "C5",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "D5",
                     "duration": 0.5
                 }
             ]
@@ -62,15 +148,7 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "C4",
-                    "duration": 0.125
-                },
-                {
-                    "pitch": "E4",
-                    "duration": 0.125
-                },
-                {
-                    "pitch": "G4",
+                    "pitch": "E5",
                     "duration": 0.5
                 }
             ]
@@ -79,15 +157,11 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "G4",
+                    "pitch": "D5",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E4",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "E4",
+                    "pitch": "E5",
                     "duration": 0.25
                 }
             ]
@@ -96,50 +170,12 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "F4",
+                    "pitch": "F5",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D4",
+                    "pitch": "F5",
                     "duration": 0.25
-                },
-                {
-                    "pitch": "D4",
-                    "duration": 0.25
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "C4",
-                    "duration": 0.125
-                },
-                {
-                    "pitch": "E4",
-                    "duration": 0.125
-                },
-                {
-                    "pitch": "C4",
-                    "duration": 0.5
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "C4",
-                    "duration": 0.125
-                },
-                {
-                    "pitch": "E4",
-                    "duration": 0.125
-                },
-                {
-                    "pitch": "C4",
-                    "duration": 0.5
                 }
             ]
         }

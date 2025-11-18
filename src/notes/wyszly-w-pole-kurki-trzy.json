@@ -11,19 +11,19 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "C",
+                    "pitch": "C4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "C",
+                    "pitch": "C4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 }
             ]
@@ -32,15 +32,15 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "A",
+                    "pitch": "A4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "A",
+                    "pitch": "A4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.5
                 }
             ]
@@ -49,19 +49,19 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 }
             ]
@@ -70,15 +70,15 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "D",
+                    "pitch": "D4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D",
+                    "pitch": "D4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "C",
+                    "pitch": "C4",
                     "duration": 0.25
                 }
             ]
@@ -87,19 +87,19 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 }
             ]
@@ -108,15 +108,15 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D",
+                    "pitch": "D4",
                     "duration": 0.5
                 }
             ]
@@ -125,19 +125,19 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 }
             ]
@@ -146,15 +146,15 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D",
+                    "pitch": "D4",
                     "duration": 0.5
                 }
             ]
@@ -163,19 +163,19 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "C",
+                    "pitch": "C4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "C",
+                    "pitch": "C4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.25
                 }
             ]
@@ -184,15 +184,15 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "A",
+                    "pitch": "A4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "A",
+                    "pitch": "A4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "G",
+                    "pitch": "G4",
                     "duration": 0.5
                 }
             ]
@@ -201,19 +201,19 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "F",
+                    "pitch": "F4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
+                    "pitch": "E4",
                     "duration": 0.25
                 }
             ]
@@ -222,15 +222,15 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "D",
+                    "pitch": "D4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D",
+                    "pitch": "D4",
                     "duration": 0.25
                 },
                 {
-                    "pitch": "C",
+                    "pitch": "C4",
                     "duration": 0.5
                 }
             ]

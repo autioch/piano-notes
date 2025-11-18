@@ -7,10 +7,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "astro:check": "astro check"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.5",
     "astro": "^5.15.8",
+    "typescript": "^5.9.3",
     "zod": "^3.21.4"
   },
   "devDependencies": {

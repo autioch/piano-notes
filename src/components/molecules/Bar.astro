@@ -3,6 +3,7 @@ import Note from "@/components/atoms/Note.astro";
 import Staff from "@/components/atoms/Staff.astro";
 import Finish from "@/components/atoms/Finish.astro";
 import type { Bar, Pitch } from "@/types/piano";
+import { ALL_PITCHES } from "@/consts";
 
 type Props = {
   bar: Bar;
@@ -10,13 +11,79 @@ type Props = {
 };
 
 const offsetMap: Record<Pitch, number> = {
-  C: 27.75,
-  D: 24.75,
-  E: 21.75,
-  F: 18.75,
-  G: 15.75,
-  A: 12.75,
-  H: 9.75,
+  // 3
+  C3: 48.75,
+  D3: 45.75,
+  E3: 42.75,
+  F3: 39.75,
+  G3: 36.75,
+  A3: 33.75,
+  H3: 30.75,
+  // 4
+  C4: 27.75,
+  D4: 24.75,
+  E4: 21.75,
+  F4: 18.75,
+  G4: 15.75,
+  A4: 12.75,
+  H4: 9.75,
+  // 5
+  C5: 6.75,
+  D5: 3.75,
+  E5: 0.75,
+  F5: -2.75,
+  G5: -5.75,
+  A5: -8.75,
+  H5: -11.75,
+};
+
+const isDownMap: Record<Pitch, boolean> = {
+  C3: false,
+  D3: false,
+  E3: false,
+  F3: false,
+  G3: false,
+  A3: false,
+  H3: false,
+  C4: false,
+  D4: false,
+  E4: false,
+  F4: false,
+  G4: false,
+  A4: false,
+  H4: false,
+  C5: false,
+  D5: true,
+  E5: true,
+  F5: true,
+  G5: true,
+  A5: true,
+  H5: true,
+};
+
+/** @TODO More lines should be added, not just one */
+const needsLine: Record<Pitch, boolean> = {
+  C3: true,
+  D3: true,
+  E3: true,
+  F3: true,
+  G3: true,
+  A3: true,
+  H3: true,
+  C4: true,
+  D4: false,
+  E4: false,
+  F4: false,
+  G4: false,
+  A4: false,
+  H4: false,
+  C5: false,
+  D5: false,
+  E5: false,
+  F5: false,
+  G5: false,
+  A5: false,
+  H5: false,
 };
 
 const {
@@ -30,9 +97,9 @@ const {
   notes.map((note, i) => {
     return (
       <g transform={`translate(${18 * i + 10}, ${offsetMap[note.pitch]})`}>
-        <Note note={note} />
+        <Note note={note} isDown={isDownMap[note.pitch]} needLine={needsLine[note.pitch]} />
       </g>
-      <g transform={`translate(${18.5 * i + 11}, 42)`}>
+      <g transform={`translate(${18 * i + 10}, ${Math.max(40,offsetMap[note.pitch] + 15)})`}>
         <text style="font-size:7px;font-weight:bold" fill="#555">{note.pitch}</text>
       </g>
     );

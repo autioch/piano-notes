@@ -1,32 +1,42 @@
 ---
-import type { Pitch, Bar as BarType, BarFinish, Duration } from "@/types/piano";
+import type { Bar } from "@/types/piano";
 import Layout from "@/components/Layout.astro";
 import SheetMusic from "@/components/SheetMusic.astro";
 import { ALL_DURATIONS, ALL_FINISHES, ALL_PITCHES } from "@/consts";
 import A4Paper from "@components/atoms/A4Paper.astro";
 
-const notes = ALL_PITCHES.flatMap((pitch) =>
-  ALL_DURATIONS.map((duration) => ({
-    pitch,
-    duration,
-  }))
-);
-
-/* Split notes array into array of arrays of 4 items */
-const bars: BarType[] = [];
-for (let i = 0; i < notes.length; i += 4) {
-  bars.push({
-    notes: notes.slice(i, i + 4),
-    type: ALL_FINISHES[(i / 4) % ALL_FINISHES.length],
-  });
+function chunkArray<T>(array: T[], chunkSize: number): T[][] {
+  const chunks: T[][] = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    chunks.push(array.slice(i, i + chunkSize));
+  }
+  return chunks;
 }
+
+const pitchBars = chunkArray(ALL_PITCHES, 7).map<Bar>((pitchesChunk, i) => ({
+  notes: pitchesChunk.map((pitch) => ({
+    pitch,
+    duration: 0.0625,
+  })),
+  type: ALL_FINISHES[i % ALL_FINISHES.length],
+}));
+
+const durationBars = chunkArray(ALL_DURATIONS, 7).map<Bar>(
+  (durationsChunk, i) => ({
+    notes: durationsChunk.map((duration) => ({
+      pitch: "F4",
+      duration,
+    })),
+    type: ALL_FINISHES[i % ALL_FINISHES.length],
+  })
+);
 ---
 
 <Layout>
   <A4Paper>
     <SheetMusic
       sheetMusic={{
-        bars,
+        bars: [...durationBars, ...pitchBars],
         composer: "Example",
         key: "violin",
         meter: [4, 4],

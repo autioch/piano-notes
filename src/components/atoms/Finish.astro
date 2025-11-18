@@ -13,18 +13,6 @@ const { barFinish } = Astro.props;
     <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
   ) : null
 }
-
-{
-  barFinish === "repeat-start" ? (
-    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
-  ) : null
-}
-
-{
-  barFinish === "repeat-end" ? (
-    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
-  ) : null
-}
 {
   barFinish === "double" ? (
     <>
@@ -39,5 +27,17 @@ const { barFinish } = Astro.props;
       <rect x="-6" y="1" width="1" height="24.5" fill="#000" />
       <rect x="-2" y="1" width="2.25" height="24.5" fill="#000" />
     </>
+  ) : null
+}
+
+{
+  barFinish === "repeat-start" ? (
+    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+
+{
+  barFinish === "repeat-end" ? (
+    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
   ) : null
 }

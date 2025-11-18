@@ -1,6 +1,5 @@
 ---
 import type { Note as NoteType } from "@/types/piano";
-import Flag from "@/components/atoms/Flag.astro";
 import {
   EXTRA_LINE_WIDTH,
   NOTE_COLORS,
@@ -13,12 +12,12 @@ import {
 type Props = {
   note: NoteType;
   isDown?: boolean;
+  needLine?: boolean;
 };
-const { note, isDown = false } = Astro.props;
+const { note, isDown = false, needLine = false } = Astro.props;
 
 const headColor = NOTE_COLORS[note.pitch] || "#000";
 const restColor = "#000";
-const needLine = note.pitch === "C";
 
 const needStem = note.duration < NOTE_FULL;
 const isFilled = note.duration < NOTE_HALF;
@@ -29,35 +28,31 @@ const flagPath =
 ---
 
 <g transform="translate(4,3.5)">
-  {
-    needStem ? (
-      <rect
-        width="0.75"
-        height="19"
-        x={isDown ? "-3.85" : "2.9"}
-        y={isDown ? "0" : "-20"}
-        fill={restColor}
-      />
-    ) : null
-  }
-  {
-    needFlag ? (
-      <path
-        transform="translate(3.3,-20.05),scale(0.04)"
-        fill={restColor}
-        d={flagPath}
-      />
-    ) : null
-  }
-  {
-    needDoubleFlag ? (
-      <path
-        transform="translate(3.3,-15.5),scale(0.04)"
-        fill={restColor}
-        d={flagPath}
-      />
-    ) : null
-  }
+  <g transform={isDown ? "scale (-1, 1),rotate(180), translate(-6.6,0)" : ""}>
+    {
+      needStem ? (
+        <rect width="0.75" height="19" x="2.9" y="-20" fill={restColor} />
+      ) : null
+    }
+    {
+      needFlag ? (
+        <path
+          transform="translate(3.3,-20.05),scale(0.04)"
+          fill={restColor}
+          d={flagPath}
+        />
+      ) : null
+    }
+    {
+      needDoubleFlag ? (
+        <path
+          transform="translate(3.3,-15.5),scale(0.04)"
+          fill={restColor}
+          d={flagPath}
+        />
+      ) : null
+    }
+  </g>
   {
     needLine ? (
       <rect
