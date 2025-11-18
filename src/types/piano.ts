@@ -1,5 +1,18 @@
 export type Pitch = "C" | "D" | "E" | "F" | "G" | "A" | "H";
-export type Duration = 1 | 0.5 | 0.25 | 0.125;
+
+type FullDuration = 1; // empty note head
+type HalfDuration = 0.5; // empty note head with stem
+type QuarterDuration = 0.25; // filled note head with stem
+type EighthDuration = 0.125; // filled note head with stem and one flag
+type SixteenthDuration = 0.0625; // filled note head with stem and two flags
+
+export type Duration =
+  | FullDuration
+  | HalfDuration
+  | QuarterDuration
+  | EighthDuration
+  | SixteenthDuration;
+
 export type BarFinish =
   | "normal"
   | "double"

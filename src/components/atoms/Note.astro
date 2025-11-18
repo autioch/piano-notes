@@ -1,0 +1,76 @@
+---
+import type { Note as NoteType } from "@/types/piano";
+import Flag from "@/components/atoms/Flag.astro";
+import {
+  EXTRA_LINE_WIDTH,
+  NOTE_COLORS,
+  NOTE_EIGHTH,
+  NOTE_FULL,
+  NOTE_HALF,
+  NOTE_QUARTER,
+} from "@/consts";
+
+type Props = {
+  note: NoteType;
+  isDown?: boolean;
+};
+const { note, isDown = false } = Astro.props;
+
+const headColor = NOTE_COLORS[note.pitch] || "#000";
+const restColor = "#000";
+const needLine = note.pitch === "C";
+
+const needStem = note.duration < NOTE_FULL;
+const isFilled = note.duration < NOTE_HALF;
+const needFlag = note.duration < NOTE_QUARTER;
+const needDoubleFlag = note.duration < NOTE_EIGHTH;
+const flagPath =
+  "M6 2c5 2 6 6 8 10 12 24 30 38 53 52 13 8 26 16 37 27l2 2c9 8 13 17 17 28l1 2c8 22 1 53-7 74-2-2-2-3-2-7v-6c-1-23-4-44-21-61-10-9-21-15-32-22a467 467 0 0 1-38-27l-6-3-3-3-8-7v-2l-3-1v-2H2l-1-7v-9A2914 2914 0 0 1 1 6V4l5-2Z";
+---
+
+<g transform="translate(4,3.5)">
+  {
+    needStem ? (
+      <rect
+        width="0.75"
+        height="19"
+        x={isDown ? "-3.85" : "2.9"}
+        y={isDown ? "0" : "-20"}
+        fill={restColor}
+      />
+    ) : null
+  }
+  {
+    needFlag ? (
+      <path
+        transform="translate(3.3,-20.05),scale(0.04)"
+        fill={restColor}
+        d={flagPath}
+      />
+    ) : null
+  }
+  {
+    needDoubleFlag ? (
+      <path
+        transform="translate(3.3,-15.5),scale(0.04)"
+        fill={restColor}
+        d={flagPath}
+      />
+    ) : null
+  }
+  {
+    needLine ? (
+      <rect
+        width={EXTRA_LINE_WIDTH}
+        height="0.75"
+        x="-6"
+        y="-0.25"
+        fill={restColor}
+      />
+    ) : null
+  }
+  <g transform="rotate(-20)">
+    <ellipse rx="4" ry="3" fill={headColor}></ellipse>
+    {isFilled ? null : <ellipse rx="3.75" ry="1.75" fill="#fff" />}
+  </g>
+</g>

@@ -1,0 +1,34 @@
+<div class="a4-paper">
+  <slot />
+</div>
+
+<style is:global>
+  .a4-paper {
+    padding: 10mm;
+    height: 297mm;
+    width: 210mm;
+    box-shadow: 0 4px 24px #aaa;
+    box-sizing: border-box;
+    margin: auto;
+  }
+
+  @media print {
+    /* hide everything except the printable .a4-paper */
+    body * {
+      visibility: hidden !important;
+    }
+    .a4-paper,
+    .a4-paper * {
+      visibility: visible !important;
+    }
+    .a4-paper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      box-shadow: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>

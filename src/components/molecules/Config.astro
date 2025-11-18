@@ -1,0 +1,45 @@
+---
+import type { Bar, Pitch, SheetMusic } from "@/types/piano";
+import Staff from "@/components/atoms/Staff.astro";
+import ViolinKey from "@/components/atoms/ViolinKey.astro";
+import ClefKey from "@/components/atoms/ClefKey.astro";
+import { CONFIG_WIDTH } from "@/consts";
+
+type Props = {
+  sheetMusic: SheetMusic;
+  first: boolean;
+};
+
+const {
+  first,
+  sheetMusic: { key, meter },
+} = Astro.props;
+---
+
+<Staff width={CONFIG_WIDTH} />
+{
+  key === "bass" ? (
+    <g transform="translate(18,4.25)">
+      <ClefKey />
+    </g>
+  ) : null
+}
+{
+  key === "violin" ? (
+    <g transform="translate(14,17),scale(1.2)">
+      <ViolinKey />
+    </g>
+  ) : null
+}
+{
+  first && (
+    <g style="font-size: 12px;font-family: sans-serif">
+      <g>
+        <text transform="translate(25,12)">{meter[0]}</text>
+      </g>
+      <g>
+        <text transform="translate(25,24)">{meter[1]}</text>
+      </g>
+    </g>
+  )
+}

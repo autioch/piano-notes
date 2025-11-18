@@ -1,9 +1,9 @@
 {
     "title": "Wlazł kotek na płotek",
-    "composer": "Traditional",
+    "composer": "Muzyka tradycyjna",
     "key": "violin",
     "meter": [
-        4,
+        3,
         4
     ],
     "bars": [
@@ -11,32 +11,7 @@
             "type": "normal",
             "notes": [
                 {
-                    "pitch": "E",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "E",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "F",
-                    "duration": 0.25
-                },
-                {
                     "pitch": "G",
-                    "duration": 0.25
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "G",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "F",
                     "duration": 0.25
                 },
                 {
@@ -44,66 +19,7 @@
                     "duration": 0.25
                 },
                 {
-                    "pitch": "D",
-                    "duration": 0.25
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "C",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "C",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "D",
-                    "duration": 0.25
-                },
-                {
                     "pitch": "E",
-                    "duration": 0.25
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "E",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "D",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "C",
-                    "duration": 0.5
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "G",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "G",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "A",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "G",
                     "duration": 0.25
                 }
             ]
@@ -116,28 +32,7 @@
                     "duration": 0.25
                 },
                 {
-                    "pitch": "E",
-                    "duration": 0.25
-                },
-                {
                     "pitch": "D",
-                    "duration": 0.25
-                },
-                {
-                    "pitch": "C",
-                    "duration": 0.25
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "notes": [
-                {
-                    "pitch": "C",
-                    "duration": 0.5
-                },
-                {
-                    "pitch": "C",
                     "duration": 0.25
                 },
                 {
@@ -150,8 +45,97 @@
             "type": "normal",
             "notes": [
                 {
+                    "pitch": "C",
+                    "duration": 0.125
+                },
+                {
                     "pitch": "E",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "G",
                     "duration": 0.5
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "C",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "E",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "G",
+                    "duration": 0.5
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "G",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "E",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "E",
+                    "duration": 0.25
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "F",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "D",
+                    "duration": 0.25
+                },
+                {
+                    "pitch": "D",
+                    "duration": 0.25
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "C",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "E",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "C",
+                    "duration": 0.5
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "notes": [
+                {
+                    "pitch": "C",
+                    "duration": 0.125
+                },
+                {
+                    "pitch": "E",
+                    "duration": 0.125
                 },
                 {
                     "pitch": "C",

@@ -1,0 +1,43 @@
+---
+import Note from "@/components/atoms/Note.astro";
+import Staff from "@/components/atoms/Staff.astro";
+import Finish from "@/components/atoms/Finish.astro";
+import type { Bar, Pitch } from "@/types/piano";
+
+type Props = {
+  bar: Bar;
+  width: number;
+};
+
+const offsetMap: Record<Pitch, number> = {
+  C: 27.75,
+  D: 24.75,
+  E: 21.75,
+  F: 18.75,
+  G: 15.75,
+  A: 12.75,
+  H: 9.75,
+};
+
+const {
+  bar: { notes, type },
+  width,
+} = Astro.props;
+---
+
+<Staff width={width} />
+{
+  notes.map((note, i) => {
+    return (
+      <g transform={`translate(${18 * i + 10}, ${offsetMap[note.pitch]})`}>
+        <Note note={note} />
+      </g>
+      <g transform={`translate(${18 * i + 11}, 45)`}>
+        <text style="font-size:7px;font-weight:bold" fill="#555">{note.pitch}</text>
+      </g>
+    );
+  })
+}
+<g transform={`translate(${width}, 0)`}>
+  <Finish barFinish={type} />
+</g>

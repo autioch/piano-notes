@@ -1,10 +1,13 @@
 ---
-import musicSheet from "../../notes/wlazl-kotek-na-plotek.json";
-import Layout from "../../components/Layout.astro";
-import SheetMusic from "../../components/SheetMusic.astro";
-import type { SheetMusic as SheetMusicType } from "../../types/piano";
+import musicSheet from "@/notes/wlazl-kotek-na-plotek.json";
+import Layout from "@/components/Layout.astro";
+import SheetMusic from "@/components/SheetMusic.astro";
+import type { SheetMusic as SheetMusicType } from "@/types/piano";
+import A4Paper from "@components/atoms/A4Paper.astro";
 ---
 
 <Layout>
-  <SheetMusic sheetMusic={musicSheet as SheetMusicType} />
+  <A4Paper>
+    <SheetMusic sheetMusic={musicSheet as SheetMusicType} />
+  </A4Paper>
 </Layout>

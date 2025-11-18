@@ -1,25 +1,12 @@
 ---
-import type {
-  Pitch,
-  Bar as BarType,
-  BarFinish,
-  Duration,
-} from "../types/piano";
-import Layout from "../components/Layout.astro";
-import SheetMusic from "../components/SheetMusic.astro";
+import type { Pitch, Bar as BarType, BarFinish, Duration } from "@/types/piano";
+import Layout from "@/components/Layout.astro";
+import SheetMusic from "@/components/SheetMusic.astro";
+import { ALL_DURATIONS, ALL_FINISHES, ALL_PITCHES } from "@/consts";
+import A4Paper from "@components/atoms/A4Paper.astro";
 
-const pitches: Pitch[] = ["C", "D", "E", "F", "G", "A", "H"];
-const durations: Duration[] = [1, 0.5, 0.25, 0.125];
-const barFinish: BarFinish[] = [
-  "normal",
-  "double",
-  "double-end",
-  "repeat-end",
-  "repeat-start",
-];
-
-const notes = pitches.flatMap((pitch) =>
-  durations.map((duration) => ({
+const notes = ALL_PITCHES.flatMap((pitch) =>
+  ALL_DURATIONS.map((duration) => ({
     pitch,
     duration,
   }))
@@ -30,19 +17,21 @@ const bars: BarType[] = [];
 for (let i = 0; i < notes.length; i += 4) {
   bars.push({
     notes: notes.slice(i, i + 4),
-    type: barFinish[(i / 4) % barFinish.length],
+    type: ALL_FINISHES[(i / 4) % ALL_FINISHES.length],
   });
 }
 ---
 
 <Layout>
-  <SheetMusic
-    sheetMusic={{
-      bars,
-      composer: "Example",
-      key: "violin",
-      meter: [4, 4],
-      title: "Example",
-    }}
-  />
+  <A4Paper>
+    <SheetMusic
+      sheetMusic={{
+        bars,
+        composer: "Example",
+        key: "violin",
+        meter: [4, 4],
+        title: "Example",
+      }}
+    />
+  </A4Paper>
 </Layout>

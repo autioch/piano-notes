@@ -1,31 +1,43 @@
 ---
-import Config from "../components/Config.astro";
-import Bar from "../components/Bar.astro";
+import Config from "@/components/molecules/Config.astro";
+import Bar from "@/components/molecules/Bar.astro";
 import type { SheetMusic } from "../types/piano";
+import { calculateBarTranslates, calculateBarWidth } from "@/utils";
+import { SVG_WIDTH, SVG_HEIGHT, BAR_HEIGHT } from "@/consts";
 
 type Props = {
   sheetMusic: SheetMusic;
 };
 
 const { sheetMusic } = Astro.props;
+const barRows = calculateBarTranslates(sheetMusic.bars);
 ---
 
+<div style="height:30mm">
+  <h1 style="margin:0;padding:0">{sheetMusic.title}</h1>
+  <h2 style="margin:0;padding:0">{sheetMusic.composer}</h2>
+</div>
 <svg
-  width="600"
-  height="400"
-  viewBox="0 0 600 400"
+  width="190mm"
+  height="247mm"
+  viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
   xmlns="http://www.w3.org/2000/svg"
 >
-  <g transform="translate(0,10)">
-    <Config sheetMusic={sheetMusic} />
-    {
-      sheetMusic.bars.map((bar, i) => (
-        <g
-          transform={`translate(${i * 85 + 40 - (i > 2 ? 295 : 0)},${i > 2 ? 60 : 0})`}
-        >
-          <Bar bar={bar} />
+  {
+    barRows.map((bars, rowIndex) => {
+      const yTranslate = rowIndex * BAR_HEIGHT + 10;
+      return (
+        <g transform={`translate(0, ${yTranslate})`}>
+          <Config sheetMusic={sheetMusic} first={rowIndex == 0} />
+          {bars.map((bar) => {
+            return (
+              <g transform={`translate(${bar.x}, 0)`}>
+                <Bar bar={bar.bar} width={bar.width} />
+              </g>
+            );
+          })}
         </g>
-      ))
-    }
-  </g>
+      );
+    })
+  }
 </svg>

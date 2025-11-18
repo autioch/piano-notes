@@ -1,0 +1,43 @@
+---
+import type { BarFinish } from "@/types/piano";
+
+type Props = {
+  barFinish: BarFinish;
+};
+
+const { barFinish } = Astro.props;
+---
+
+{
+  barFinish === "normal" ? (
+    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+
+{
+  barFinish === "repeat-start" ? (
+    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+
+{
+  barFinish === "repeat-end" ? (
+    <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
+  ) : null
+}
+{
+  barFinish === "double" ? (
+    <>
+      <rect x="-5" y="1" width="1" height="24.5" fill="#000" />
+      <rect x="-1" y="1" width="1" height="24.5" fill="#000" />
+    </>
+  ) : null
+}
+{
+  barFinish == "double-end" ? (
+    <>
+      <rect x="-6" y="1" width="1" height="24.5" fill="#000" />
+      <rect x="-2" y="1" width="2.25" height="24.5" fill="#000" />
+    </>
+  ) : null
+}
